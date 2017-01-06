@@ -14,3 +14,5 @@ class Task
     @complete = true
   end
 end
+# p Task.new("chicken")
+# p Task.new("chicken").class

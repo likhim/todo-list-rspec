@@ -1,3 +1,5 @@
+require_relative "task"
+
 class List
   attr_reader :title, :tasks
 
@@ -10,8 +12,15 @@ class List
     tasks << task
   end
 
+  # def complete_task(index)
+  #   tasks[index].complete!
+  # end
+
   def complete_task(index)
-    tasks[index].complete!
+    return false unless tasks[index]
+    if tasks[index].complete!
+      return true
+    end
   end
 
   def delete_task(index)
@@ -26,3 +35,12 @@ class List
     tasks.select { |task| !task.complete? }
   end
 end
+
+# x = List.new("My list", [Task.new("chicken")])
+
+# p x.add_task(Task.new("apple"))
+
+# # p x.add_task(Task.new("apple")).class
+# p x.incomplete_tasks
+
+
