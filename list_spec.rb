@@ -12,7 +12,7 @@ describe List do
 
   describe "#initiialize" do
   	it "takes a title for its first argument and tasks which will be in an array as its second argument" do
-  		expect(List.new("Buy fruits", "apple")).to be_a_kind_of(List)
+  		expect(List.new("Buy fruits", [Task.new("apple")])).to be_a_kind_of(List)
   	end
 
  		it "requires two arguments" do
